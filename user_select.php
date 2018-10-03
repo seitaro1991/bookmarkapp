@@ -16,7 +16,7 @@ if($status==false){
   while( $result = $stmt->fetch(PDO::FETCH_ASSOC)){
     $view .= '<p>';
     $view .= '<a href="user_detail.php?id='.$result['id'].'">';  //更新ページへのaタグを作成
-    $view .= $result['name'].'　'.$result['lid'].'　'.$result['kanri_flg'];
+    $view .= '名前---'.$result['name'].'　lid---'.$result['lid'];
     $view .= '</a>';
     $view .= '　';
     $view .= '<a href="user_delete.php?id='.$result['id'].'">';  //削除用aタグを作成
@@ -44,8 +44,13 @@ if($status==false){
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-      <div class="navbar-header">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="select.php">ブックマーク管理</a>
+      <a class="navbar-brand" href="index.php">ブックマーク登録</a>
+      <a class="navbar-brand" href="user_select.php">ユーザー管理</a>
       <a class="navbar-brand" href="user_index.php">ユーザー登録</a>
+      <a class="navbar-brand" href="logout.php">ログアウト</a>
+    </div>
     </div>
   </nav>
 </header>

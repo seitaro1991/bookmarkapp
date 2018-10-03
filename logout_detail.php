@@ -5,8 +5,6 @@
 
 session_start();
 include('functions.php');
-chk_ssid();
-$sid = session_id();
 
 //1.GETでidを取得
 if(!isset($_GET['id'])){
@@ -48,29 +46,23 @@ if($status==false){
 <body>
 
 <!-- Head[Start] -->
-<!-- <header>
+<header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="select.php">ブックマーク管理</a>
-      <a class="navbar-brand" href="index.php">ブックマーク登録</a>
-      <a class="navbar-brand" href="logout.php">ログアウト</a>
-    </div>
+    <div class="navbar-header"><a class="navbar-brand" href="logout_select.php">一覧ページ</a></div>
     </div>
   </nav>
-</header> -->
-<?=$menu = menu();?>
+</header>
 <!-- Head[End] -->
 
 <!-- Main[Start] -->
-<form method="post" action="update.php">
+<form method="post" action="logout_select.php">
   <div class="jumbotron">
    <fieldset>
-    <legend>書き直し</legend>
+    <legend>詳細ページ</legend>
      <!-- <label>検索したい著名人：<input type="text" name="title"></label><br> -->
-     <label>コメント：<br>
-     <textarea name="comment" rows="4" cols="40"><?=$rs["comment"]?></textarea></label><br>
-     <input type="submit" value="送信">
+     <h2><?=$rs["title"]?></h2>
+     <p>コメント：<?=$rs["comment"]?></p><br>
      <!-- idは変えたくない = ユーザーから見えないようにする-->
      <input type="hidden" name="id" value="<?=$rs["id"]?>">
     </fieldset>

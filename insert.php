@@ -36,7 +36,7 @@ include('functions.php');
 db_conn();
 
 //３．データ登録SQL作成
-$stmt = $pdo->prepare('INSERT INTO '. $table .'(id, title, img, url, comment, indate )VALUES(NULL, :a1, :a2, :a3, :a4, sysdate())');
+$stmt = $pdo->prepare('INSERT INTO '. $table .'(id, title, img, url, comment )VALUES(NULL, :a1, :a2, :a3, :a4)');
 $stmt->bindValue(':a1', $title, PDO::PARAM_STR);    //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':a2', $img, PDO::PARAM_STR);   //Integer（数値の場合 PDO::PARAM_INT)
 $stmt->bindValue(':a3', $url, PDO::PARAM_STR);  //Integer（数値の場合 PDO::PARAM_INT)

@@ -1,16 +1,11 @@
 <?php
-session_start();
-include('functions.php');
-chk_ssid();
-$sid = session_id();
-
-
 //1.  DB接続します
+include('functions.php');
 $pdo = db_conn();
 
 
 //２．データ登録SQL作成
-$stmt = $pdo->prepare('SELECT * FROM '.$table);
+$stmt = $pdo->prepare("SELECT * FROM gs_bm_table");
 $status = $stmt->execute();
 
 //３．データ表示
@@ -39,13 +34,9 @@ if($status==false) {
     $view .= '<h2>';
     $view .= $result['title'];
     $view .= '</h2>';
-    $view .= '<a href="detail.php?id='.$result['id'].'">';//更新ページへのaタグを作成
+    $view .= '<a href="logout_detail.php?id='.$result['id'].'">';//更新ページへのaタグを作成
     $view .= $result['comment'];
     $view .= '</a>';
-    $view .= '<a href="delete.php?id='.$result['id'].'">';  //削除用aタグを作成
-    $view .= '［削除］';
-    $view .= '</a>';
-    $view .= '</p>';
 
 
   }
@@ -66,20 +57,15 @@ if($status==false) {
 </head>
 <body id="main">
 <!-- Head[Start] -->
-<!-- <header>
+<header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="select.php">ブックマーク管理</a>
-      <a class="navbar-brand" href="index.php">ブックマーク登録</a>
-      <a class="navbar-brand" href="logout.php">ログアウト</a>
-    </div>
+      <div class="navbar-header">
+      <a class="navbar-brand" href="login.php">ログインページ</a>
+      </div>
     </div>
   </nav>
-</header> -->
-<?=$menu = menu();?>
-
-
+</header>
 <!-- Head[End] -->
 
 <!-- Main[Start] -->

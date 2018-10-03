@@ -12,7 +12,14 @@
 <header>
   <nav class="navbar navbar-default">
     <div class="container-fluid">
-    <div class="navbar-header"><a class="navbar-brand" href="user_select.php">データ一覧</a></div>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="select.php">ブックマーク管理</a>
+      <a class="navbar-brand" href="index.php">ブックマーク登録</a>
+      <a class="navbar-brand" href="user_select.php">ユーザー管理</a>
+      <a class="navbar-brand" href="user_index.php">ユーザー登録</a>
+      <a class="navbar-brand" href="logout.php">ログアウト</a>
+    </div>
+    </div>
   </nav>
 </header>
 <!-- Head[End] -->
@@ -23,11 +30,15 @@
    <fieldset>
     <legend>ユーザー登録</legend>
      <label>名前：<input type="text" name="name"></label><br>
-     <label>ニックネーム：<input type="text" name="lid"></label><br>
-     <label>パスワード：<input type="text" name="lpw"></label><br>
+     <label>lid：<input type="text" name="lid"></label><br>
+     <label>lpw：<input type="text" name="lpw"></label><br>
+     <label>kanri_flg：</label>
+      <label>一般<input type="radio" name="kanri_flg" value="0" checked></label>
+      <label>管理者<input type="radio" name="kanri_flg" value="1"></label><br>
+     <label>life_flg：</label>
+      <label>通常<input type="radio" name="life_flg" value="0" checked></label>
+      <label>退会<input type="radio" name="life_flg" value="1"></label><br>
      <input type="submit" value="送信">
-     <input type="hidden" name="kanri_flg" value="0">
-     <input type="hidden" name="life_flg" value="0">
     </fieldset>
   </div>
 </form>
