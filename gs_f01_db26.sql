@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: 2018 年 9 月 27 日 18:05
+-- Generation Time: 2018 年 10 月 03 日 10:19
 -- サーバのバージョン： 5.6.21
 -- PHP Version: 5.6.3
 
@@ -114,14 +114,16 @@ CREATE TABLE IF NOT EXISTS `gs_user_table` (
   `lpw` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
   `kanri_flg` int(1) NOT NULL COMMENT '0=通常ユーザー　1=管理者',
   `life_flg` int(1) NOT NULL COMMENT '0=使用中　1=退会'
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- テーブルのデータのダンプ `gs_user_table`
 --
 
 INSERT INTO `gs_user_table` (`id`, `name`, `lid`, `lpw`, `kanri_flg`, `life_flg`) VALUES
-(2, 'SEITARO HISAKAWA', 'MAKO', '0000', 1, 0);
+(2, 'SEITARO HISAKAWA', 'MAKO', '0000', 0, 0),
+(3, 'ひさかわせいたろう', 'マコ', '0000', 1, 0),
+(5, 'せい', 'sei', '0000', 1, 0);
 
 --
 -- Indexes for dumped tables
@@ -174,7 +176,7 @@ MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `gs_user_table`
 --
 ALTER TABLE `gs_user_table`
-MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(12) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
