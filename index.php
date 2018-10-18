@@ -44,6 +44,11 @@ chk_ssid();
   </div>
 </form>
 <!-- Main[End] -->
+<script src="https://cdn.ckeditor.com/4.10.1/full/ckeditor.js"></script>
+  <script>
+      CKEDITOR.replace('comment');
+      // jsではalert(CKEDITOR.instances.detail.getData());で値がとれる
+  </script>
 
 
 </body>
